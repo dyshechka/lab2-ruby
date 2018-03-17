@@ -1,0 +1,9 @@
+<%= form_with url: products_add_item_path do |form| %>
+  <%= form.hidden_field :product_id, value: product.id %>
+  <tr>
+    <td><%= product.name %></td>
+    <td><%= product.price %></td>
+    <td><%= form.number_field :quantity, value: 1 %></td>
+    <td><%= form.submit "+" %></td>
+  </tr>
+<% end %>

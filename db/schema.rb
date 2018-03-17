@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20180313182044) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.boolean "is_done"
+    t.boolean "is_done", default: false, null: false
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

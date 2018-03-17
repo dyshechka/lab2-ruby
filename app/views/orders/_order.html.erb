@@ -1,0 +1,25 @@
+<tr>
+  <td colspan="2">
+    Order <%= order.created_at %>
+  </td>
+</tr>
+<% order.order_items.each do |item| %>
+  <tr>
+    <td>
+      <%= item.product.name %>
+    </td>
+    <td>
+      <%= item.quantity %>
+    </td>
+  </tr>
+<% end %>
+<% if !order.is_done %>
+  <tr>
+    <td>
+      <%= form_with url: orders_done_path do |form| %>
+        <%= form.hidden_field :order_id, value: order.id %>
+        <%= form.submit "Done" %>
+      <% end %>
+    </td>
+  </tr>
+<% end %>

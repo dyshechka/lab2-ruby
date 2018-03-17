@@ -1,11 +1,5 @@
 <h2>Product list</h2>
-<table>
-  <tr>
-    <th>name</th>
-    <th>price</th>
-    <th>quantity</th>
-    <th>add to cart</th>
-  </tr>
+<div>
   <%= render @products %>
-</table>
+</div>
 <%= link_to 'Order list', orders_index_path %>
